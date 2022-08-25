@@ -13,39 +13,64 @@ class BusinessCard extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            //verticalDirection: VerticalDirection.up, //de baixo para cima
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: const Text("Hello, World!"),
-                color: Colors.red,
-                width: 100.0,
-                height: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('images/fotohardrock.png'),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.yellow,
+              Text('Israel Schroeder',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 40,
+                fontFamily: 'Pacifico',
+              ),),
+              Text('Aluno Universitário', style:
+                TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontFamily: 'SourceSansPro',
+                  letterSpacing: 0,
+                ),),
+              SizedBox(
+                height: 50,
+                  child:
+                  Divider(
+                    color: Colors.teal,
                   ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.green,
-                  )
-                ],
               ),
-              Container(
-                child: const Text("caixa2"),
-                color: Colors.blue,
-                width: 100,
-                height: double.infinity,
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                      Icons.phone,
+                  color: Colors.teal,
+                  ),
+                  title: Text('47 9 9999-9999', style:
+                    TextStyle(
+                      fontSize: 20,
+                      color: Colors.teal,
+                      fontFamily: 'SourceSansPro',
+                    ),
+                  ),
+                ),
               ),
-
-
+              Card(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.mail,
+                    color: Colors.teal,
+                  ),
+                  title: Text('email@exemplo.com', style:
+                  TextStyle(
+                    fontSize: 20,
+                    color: Colors.teal,
+                    fontFamily: 'SourceSansPro',
+                  ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
